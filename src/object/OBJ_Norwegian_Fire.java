@@ -1,0 +1,53 @@
+package object;
+
+import entity.Entity;
+import entity.Projectile;
+import main.GamePanel;
+import java.awt.Color;
+
+public class OBJ_Norwegian_Fire extends Projectile {
+
+    GamePanel gp;
+
+    public OBJ_Norwegian_Fire(GamePanel gp) {
+        super(gp);
+        this.gp = gp;
+
+        name = "Norwegian Fire";
+        speed = 10;
+        maxLife = 80;
+        life = maxLife;
+        attack = 2;
+        useCost = 0;
+        alive = false;
+
+        getImage();
+    }
+
+    public void getImage() {
+        up1 = setup("/projectile/fireup1", gp.tileSize, gp.tileSize);
+        up2 = setup("/projectile/fireup2", gp.tileSize, gp.tileSize);
+        down1 = setup("/projectile/firedown1", gp.tileSize, gp.tileSize);
+        down2 = setup("/projectile/firedown2", gp.tileSize, gp.tileSize);
+        left1 = setup("/projectile/fireleft1", gp.tileSize, gp.tileSize);
+        left2 = setup("/projectile/fireleft2", gp.tileSize, gp.tileSize);
+        right1 = setup("/projectile/fireright1", gp.tileSize, gp.tileSize);
+        right2 = setup("/projectile/fireright2", gp.tileSize, gp.tileSize);
+    }
+    public Color getParticleColor(){
+        Color color = new Color(250,150,7);
+        return color;
+    }
+    public int getParticleSize(){
+        int size = 10; //pixel
+        return size;
+    }
+    public int getParticleSpeed(){
+        int speed = 1;
+        return speed;
+    }
+    public int getParticleMaxLife(){
+        int maxLife = 20;
+        return maxLife;
+    }
+}
